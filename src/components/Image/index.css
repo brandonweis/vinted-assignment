@@ -1,0 +1,118 @@
+figure {
+    box-shadow: 1px 1px 2px 0px rgb(0 0 0 / 60%);;
+    position: relative;
+    background: #c0bfc2;
+    height: 15rem;
+    border-radius: 0.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0
+}
+
+figure:hover .cover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.blur-load:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: pulse 2.5s infinite
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.blur-load {
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-load > img {
+  opacity: 0;
+}
+
+.blur-load.loaded > img {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
+}
+
+.blur-load.loaded:before {
+  content: none
+}
+
+.background {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+  
+.cover {
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  /* cover arrangement */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  row-gap: 10px;
+
+  /* style */
+  color: rgb(227, 221, 221);
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.underline {
+  background-color: rgb(227, 221, 221);;
+  height: 3px;
+  width: 80%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.margin0 {
+  margin: 0
+}
+
+.favourite {
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 15px;
+  border-width: 1px;
+  padding: 10px 20px;
+  border-style: solid;
+  border-color: rgb(227, 221, 221);
+  color: rgb(227, 221, 221);
+  border-radius: 20px;
+  margin-top: 25px;
+}
+
+.favourite:hover {
+  border-color: rgb(193, 189, 189);
+}
